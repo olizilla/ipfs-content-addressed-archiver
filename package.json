@@ -1,0 +1,23 @@
+{
+  "name": "ipfs-content-addressed-archiver",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview",
+    "publish": "npm run build && ipfs add -Q -r --cid-version=1 dist"
+  },
+  "dependencies": {
+    "@ipld/car": "^2.1.0",
+    "browser-readablestream-to-it": "^1.0.2",
+    "ipfs-unixfs-importer": "https://gitpkg.now.sh/ipfs/js-ipfs-unixfs/packages/ipfs-unixfs-importer?js-dag-pb-with-dist",
+    "preact": "^10.5.13",
+    "tachyons": "^4.12.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.0.0",
+    "vite": "^2.3.3"
+  }
+}
