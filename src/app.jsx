@@ -19,19 +19,19 @@ export function App(props) {
       <section class="tc">
         <p class="ma0 pv3 ph2 mw7 center f4 fw6 lh-copy dark-gray">
           Use your browser to hash files with <a href="https://ipfs.io" class="link black fw7">IPFS</a> and export them as a verifiable 
-          <a class="nowrap blue link underline-hover ml1" href="https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md">
-            content-addressed archive
+          <a class="blue link underline-hover ml1" href="https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md">
+            <span class="nowrap">content-addressed</span> archive
           </a>
         </p>
-        <p class="mw6 center pa4 f5 f4-ns black bg-near-white br2 lh-copy">
-          add files 📄 <Arrow /> ✨ <span class="fw7">IPFS</span> ✨ <Arrow /> download <abbr title="IPFS Content-Addressed Archive">.car </abbr>  📦
+        <p class="mw6 center pv4 f5 f4-ns black bg-near-white br2 lh-copy">
+          add files 📄 <Arrow /> <span class="dn di-ns">✨ </span><span class="fw7">IPFS</span> ✨ <Arrow /> download <span title="IPFS Content-Addressed Archive">.car 📦</span>
         </p>
         <div class="mw6 center mt4">
           <FileForm files={files} setFiles={setFiles} />
           { files.length ? (
             <ul class="tl bg-near-white ma0 ph0 pv2" style="list-item-style:none"> 
             {files.map(f => 
-              <li class="db pv2 ph3 fw4 f7 truncate nowrap">
+              <li class="db pv1 ph3 fw4 f6 truncate nowrap black">
                 <span>{f.name}</span>
               </li>
             )}
@@ -42,7 +42,7 @@ export function App(props) {
           <div>
             <div class="mw6 center tl bg-light-gray black pt2 pb3 ph3 fw4 f7 overflow-y-scroll">
               <label class="db">
-                <a class="ttu blue fw6 link" herf="https://docs.ipfs.io/concepts/content-addressing/">IPFS <abbr title="Content ID (AKA the IPFS HASH)">CID</abbr></a>
+                <a class="ttu blue fw6 link" herf="https://docs.ipfs.io/concepts/content-addressing/">IPFS <abbr title="Content ID aka the IPFS HASH">CID</abbr></a>
               </label>
               <code >{rootCid ? rootCid.toString() : '...'}</code>
             </div>
@@ -51,16 +51,22 @@ export function App(props) {
             </CarDownloadLink>
           </div>
         ) : null}
-        <p class="tl pt2 mw6 center f6 fw4 lh-copy dark-gray">
-          <strong class="gold">⚠</strong> You must import your car file to an IPFS node to be able to retrieve them from a gateway or other peers.
+        <p class="tc pt2 ph3 mw6 center f6 fw4 lh-copy dark-gray">
+          <strong class="gold">⚠</strong> You must import your car file to an IPFS node to be able to retrieve the contents from a gateway or other peers.
         </p>
       </section>
-      <section class="bg-near-white mw7 center ph4 pv3 mt5 lh-tight br2">
-        <p class="f4 fw5 near-black">
-          🏡 It's all <strong>local</strong>. <span class="gray db">No data leaves your browser. Nothing is tracked.</span>
+      <section class="bg-near-white mw7 center ph3 ph4-ns pv3 mt5 lh-tight br2">
+        <h2 class="f4 fw5 near-black mb1 mt3">
+          🏡 It's all <strong>local</strong>
+        </h2>
+        <p class="gray db f5 fw5 mt0">
+          No data leaves your browser. Nothing is tracked.
         </p>
-        <p class="f4 fw5 near-black">
-          <span class="blue">⬢</span> It's all <strong>IPFS</strong>. <span class="gray db">Just enough code to chunk & hash your files to produce an IPFS compatible content-addressed archive.</span>
+        <h2 class="f4 fw5 near-black mb1 mt4">
+          <span class="blue">⬢</span> It's all <strong>IPFS</strong>
+        </h2>
+        <p class="gray db f5 fw5 mt0">
+        Just enough code to chunk & hash your files to produce an IPFS compatible content-addressed archive.
         </p>
       </section>
       <footer class="tc mw7 center mt5 mb3">
@@ -68,7 +74,6 @@ export function App(props) {
         <a class="link blue f6 fw5" href="https://github.com/olizilla/ipfs-content-addressed-archiver">
           github.com/olizilla/ipfs-content-addressed-archiver
         </a>
-
       </footer>
     </div>
   )
@@ -92,7 +97,7 @@ function CarDownloadLink ({files, className, children, setRootCid, rootCid}) {
 function FileForm ({files = [], setFiles}) {
   return (
     <form style={{opacity: files.length ? 0.8 : 1}}>
-      <label class="db pv3 ba b--silver link pointer glow o-90 bg-blue white relative br1">
+      <label class="db mh2 mh0-ns pv3 link pointer glow o-90 bg-blue white relative br1">
         <span class="fw6 f5">
           {files.length ? "Pick some other files 📄" : "Open file picker 📄" }
         </span>
