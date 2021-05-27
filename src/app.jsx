@@ -23,7 +23,7 @@ export function App(props) {
             <span class="nowrap">content-addressed</span> archive
           </a>
         </p>
-        <p class="mw6 center pv4 f5 f4-ns black bg-near-white br2 lh-copy">
+        <p class="dn db-ns mw6 center pv4 f5 f4-ns black bg-near-white br2 lh-copy">
           add files 📄 <Arrow /> <span class="dn di-ns">✨ </span><span class="fw7">IPFS</span> ✨ <Arrow /> download <span title="IPFS Content-Addressible Archive">.car 📦</span>
         </p>
         <div class="mw6 center mt4">
