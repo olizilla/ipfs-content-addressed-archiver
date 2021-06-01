@@ -24,7 +24,7 @@ export function App(props) {
           </a>
         </p>
         <p class="dn db-ns mw6 center pv4 f5 f4-ns black bg-near-white br2 lh-copy">
-          add files 📄 <Arrow /> <span class="dn di-ns">✨ </span><span class="fw7">IPFS</span> ✨ <Arrow /> download <span title="IPFS Content-Addressible Archive">.car 📦</span>
+          add files 📄 <Arrow /> <span class="dn di-ns">✨ </span><span class="fw7">IPFS</span> ✨ <Arrow /> download <span title="IPFS Content-Addressed Archive">.car 📦</span>
         </p>
         <div class="mw6 center mt4">
           <FileForm files={files} setFiles={setFiles} />
