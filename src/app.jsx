@@ -122,12 +122,15 @@ function onFileInput (setFiles, evt) {
 async function createCarBlob (files) {
   if (!files || !files.length) return
   if (files.car) return
-  const carChunks = []
+  const carParts = []
   const { root, out } = await fileListToCarIterator(files)
   for await (const chunk of out) {
-    carChunks.push(chunk)
+    carParts.push(chunk)
   }
-  return { root, car: new Blob(carChunks) }
+  const car = new Blob(carParts, {
+    type: 'application/car',
+  })
+  return { root, car }
 }
 
 class MapBlockStore {
