@@ -161,7 +161,8 @@ export async function fileListToCarIterator (fileList, blockApi = new MapBlockSt
   
   const options = {
     cidVersion: 1,
-    wrapWithDirectory: true
+    wrapWithDirectory: true,
+    rawLeaves: true
   }
   const unixFsEntries = []
   for await (const entry of importer(fileEntries, blockApi, options)) {
