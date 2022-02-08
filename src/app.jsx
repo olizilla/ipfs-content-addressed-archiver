@@ -19,7 +19,7 @@ export function App(props) {
       <section class="tc">
         <p class="ma0 pv3 ph2 mw7 center f4 fw6 lh-copy dark-gray">
           Use your browser to hash files with <a href="https://ipfs.io" class="link black fw7">IPFS</a> and export them as a verifiable 
-          <a class="blue link underline-hover ml1" href="https://github.com/ipld/specs/blob/master/block-layer/content-addressable-archives.md">
+          <a class="blue link underline-hover ml1" href="https://ipld.io/specs/transport/car/">
             <span class="nowrap">content-addressed</span> archive
           </a>
         </p>
